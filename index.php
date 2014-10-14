@@ -117,8 +117,8 @@ function fogbugz_api_call($token, $action, $caseID, $message='') {
   curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($curl_handle, CURLOPT_POST, TRUE);
   $ch_post_data = array(
-    'token' => $token,
-    'ixBug' => $caseID,
+    'token'  => $token,
+    'ixBug'  => $caseID,
     'sEvent' => $message,
   );
   curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $ch_post_data);
