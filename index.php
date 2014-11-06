@@ -4,9 +4,7 @@
  * As BugzID numbers are unique across projects, this does not require any configuration on the fogbugz instance.
  */
 
-$fogbugzUserEmail = '';
-$fogbugzPassword = '';
-$logFile = '';
+require 'config.inc.php';
 
 try {
   $payload = json_decode($_REQUEST['payload']);
