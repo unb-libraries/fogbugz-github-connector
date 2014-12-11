@@ -6,8 +6,9 @@
 
 require 'config.inc.php';
 
+$raw = file_get_contents('php://input');
 try {
-  $payload = json_decode($_REQUEST['payload']);
+  $payload = json_decode($raw);
 } catch(Exception $e) {
   exit(0);
 }
