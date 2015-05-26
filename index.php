@@ -75,7 +75,7 @@ function generate_message($commit) {
  *   Token for FogBugz API calls
  */
 function get_fogbugz_token($fogbugzUserEmail, $fogbugzPassword) {
-  $curl_handle = curl_init('http://support.lib.unb.ca/api.asp?cmd=logon');
+  $curl_handle = curl_init('https://support.lib.unb.ca/api.asp?cmd=logon');
 
   curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($curl_handle, CURLOPT_POST, TRUE);
@@ -112,7 +112,7 @@ function get_fogbugz_token($fogbugzUserEmail, $fogbugzPassword) {
  *   TRUE if action completed successfully, FALSE if not
  */
 function fogbugz_api_call($token, $action, $caseID, $message='') {
-  $curl_handle = curl_init('http://support.lib.unb.ca/api.asp?cmd=' . $action);
+  $curl_handle = curl_init('https://support.lib.unb.ca/api.asp?cmd=' . $action);
   curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($curl_handle, CURLOPT_POST, TRUE);
   $ch_post_data = array(
